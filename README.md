@@ -36,7 +36,7 @@ dst=np.float32([(450,0),(w-450,0),(450,h),(w-450,h)]).
 We then combine the above obtained images and pass itto the sliding window function
 
 <p align="center">
-<img src="images_for_readme/wrap_image.png">
+<img src="images_for_readme/wrap_image.PNG">
 </p>
 
 
@@ -50,7 +50,7 @@ prevent lane from expanding or contracting suddenly.
 
 
 <p align="center">
-<img src="images_for_readme/histogram.png">
+<img src="images_for_readme/histogram.PNG">
 </p>
 
 #### C) Using Sliding window polyfit to find all lane pixels
@@ -66,7 +66,7 @@ us the y-coordinate.
 pass it to the next function to calculate the equation of the curve.
 
 <p align="center">
-<img src="images_for_readme/sliding_window.png">
+<img src="images_for_readme/sliding_window.PNG">
 </p>
 
 #### D) Fitting the curve of the lane and Moving Average.
@@ -77,7 +77,7 @@ gives us a, b and c values. The below image shows more clarity.
 incoming value and also remove the oldest values.
 
 <p align="center">
-<img src="images_for_readme/fitted_curve1.png">
+<img src="images_for_readme/fitted_curve1.PNG">
 </p>
 
 #### E) Radius of curvature and Lane offset calculation
@@ -101,8 +101,7 @@ Rcurve= ((1+(2Ay+B)^2)^3/2)/∣2A∣
 
 4. Which in code looks like below.
 ```
-curve_radius = ((1 + (2*fit[0]*y_0*y_meters_per_pixel + fit[1])**2)**1.5) /
-np.absolute(2*fit[0])
+curve_radius = ((1 + (2*fit[0]*y_0*y_meters_per_pixel + fit[1])**2)**1.5) / np.absolute(2*fit[0])
 ```
 In this example, fit[0] is the first coefficient (the y-squared coefficient)of the second order polynomial fit, and fit[1] is the second (y) coefficient. y_0 is the y position within the image upon which the curvature
 calculation is based (the bottom-most y - the position of the car in the image - was chosen). y_meters_per_pixel is the factor used for converting from pixels to meters. This conversion was also used to generate a new fit with coefficients in terms of meters.
@@ -132,7 +131,7 @@ system and is negative when the turn is right.
 and for the rest values of gradients say that the lane is straight.
 
 <p align="center">
-<img src="images_for_readme/fitted_curve2.png">
+<img src="images_for_readme/fitted_curve2.PNG">
 </p>
 
 ## Instructions
